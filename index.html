@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>方继禾 - JLU-NBBMS 自荐书</title>
+    <style>
+        /* 平滑滚动 */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ========== 基础设置 ========== */
+        body {
+            background-color: #f8f9fa; 
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif; 
+            margin: 0; 
+            padding: 0;
+            color: #333;
+            line-height: 1.8; 
+        }
+
+        /* ========== 导航栏 ========== */
+        .navbar {
+            background-color: #663399; 
+            padding: 15px 0;
+            position: sticky; 
+            top: 0;
+            z-index: 100;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        .navbar a:hover {
+            color: #ffd700; 
+        }
+
+        /* ========== 内容区块通用样式 ========== */
+        .section {
+            padding: 50px 20px;
+            max-width: 900px;
+            margin: 0 auto; 
+        }
+        .section h2 {
+            color: #663399;
+            border-bottom: 2px solid #663399;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        /* 背景交替 */
+        .bg-white { background-color: #ffffff; }
+        .bg-gray { background-color: #f4f4f9; }
+
+        /* ========== 首屏 ========== */
+        .hero {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            background-color: #e6e6fa;
+        }
+        .hero h1 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            text-align: left;
+            max-width: 800px;
+            margin: 15px auto;
+            font-size: 16px;
+        }
+
+        /* ========== 画廊（绘画区：5图网格） ========== */
+        .gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 两列 */
+            gap: 15px; 
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 100%; 
+            height: 100%; 
+            display: block; 
+            object-fit: cover; 
+            border-radius: 20px; /* 圆角 */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 阴影 */
+            cursor: pointer; 
+            transition: transform 0.3s; 
+        }
+        .gallery img:hover {
+            transform: scale(1.02); 
+        }
+        
+        /* 核心魔法：让第3张图横跨两列（变成大图） */
+        .gallery img:nth-child(3) {
+            grid-column: span 2; 
+            max-height: 700px; 
+        }
+
+        /* ========== 编程代码区专属网格（3图自适应） ========== */
+        .code-gallery {
+            display: grid;
+            /* 自适应列宽：屏幕宽就排成一排，屏幕窄自动变一列 */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .code-gallery img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+            background-color: #fff; /* 代码截图一般有底色 */
+        }
+        .code-gallery img:hover {
+            transform: scale(1.02);
+        }
+
+        /* ========== 灯箱特效 ========== */
+        .lightbox {
+            display: none; 
+            position: fixed; 
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.85); 
+            z-index: 1000; 
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox img {
+            max-width: 90%; 
+            max-height: 90vh; 
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255,255,255,0.3);
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* ========== 页脚 ========== */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #333;
+            color: #ddd;
+            margin-top: 20px;
+        }
+        footer p { margin: 5px 0; }
+    </style>
+</head>
+<body>
+
+    <!-- 1. 导航栏 -->
+    <div class="navbar">
+        <a href="#passion">兴趣与热爱</a>
+        <a href="#art">绘画与审美</a>
+        <a href="#coding">编程与数据</a>
+        <a href="#personality">性格与团队</a>
+    </div>
+
+    <!-- 2. 开头背景（无导航） -->
+    <div class="hero">
+        <h1>尊敬的张灵老师：</h1>
+        <p>您好！我怀着紧张与崇敬的心情，一字一句敲下这份自荐信，希望您能给我一次机会，让我有幸成为JIU- NBBMS的一员，参加igem比赛。</p>
+        <p>其实，我从暑假开始就对这一战队有所耳闻，并且了解我们JIU- NBBMS所取得的光辉战绩。特别是您在那节生物医学科学导论课上有关igem比赛的生动阐释，不仅让我对大学四年漫漫长路的轨迹规划更加清晰，还让我对生医科专业的热爱、对加入JIU- NBBMS的向往不断加深。（那堂课，我收获很大，我在大家面前支离破碎的小演讲，却得到了您的热情鼓励，这让我坚定，未来的演讲，未来的长路，我会勇敢抬起双眼，给予身边的每一束目光、每一份期待，一次真心的回应。）</p>
+        <p>但是同时，我也清楚地知道，想加入JIU- NBBMS的大一新生很多，那么我想给您一些选择我的理由，诚挚地希望您可以给我一次宝贵的机会。</p>
+    </div>
+
+    <!-- 3. 方面一：热爱 -->
+    <div class="section bg-white" id="passion">
+        <h2>首先：对生物医学、基因工程的兴趣与热爱</h2>
+        <p>我对生物医学、基因工程有着浓厚的兴趣与热爱。生物演化创造生命奇迹，基因编码破译遗传密码，igem正是把这本“生命之书”从实验室延伸到真实世界的桥梁和纽带。应用自己所学，触摸那些沉默的心跳，解决那些实际的问题，这便是我的热爱与追求。</p>
+    </div>
+
+    <!-- 4. 方面二：绘画（5图排版） -->
+    <div class="section bg-gray" id="art">
+        <h2>同时：多年的绘画功底与审美能力</h2>
+        <p>我有多年的绘画功底和一定的审美能力，在儿童画、油画、国画、Q版、二次元卡通画、素描等方面都有所涉猎。高考结束后，我用绘画软件自学电子数字绘画，目前基本掌握用绘画软件绘制Q版、二次元卡通画，可以创造绘制一些logo，插画，二次元，Q版造型及其装饰美化，希望这些可以为我们JIU- NBBMS有所帮助。（文末附上了我的一些数字绘画作品）</p>
+        
+        <p style="color: #666; font-size: 14px; margin-top: 20px;">👇 <i>（点击下方图片可放大查看）</i></p>
+        
+        <div class="gallery">
+            <img src="https://s41.ax1x.com/2026/10/30/pn68q74.png" alt="作品1" onclick="openLightbox(this)">
+            <img src="https://s41.ax1x.com/2026/10/30/pn68HnU.png" alt="作品2" onclick="openLightbox(this)">
+            <img src="https://s41.ax1x.com/2026/10/30/pn68XN9.png" alt="作品3" onclick="openLightbox(this)">
+            <img src="https://s41.ax1x.com/2026/10/30/pn68bBF.png" alt="作品4" onclick="openLightbox(this)">
+            <img src="https://s41.ax1x.com/2026/10/30/pn68OAJ.png" alt="作品5" onclick="openLightbox(this)">
+        </div>
+    </div>
+
+    <!-- 5. 方面三：编程（3图并排） -->
+    <div class="section bg-white" id="coding">
+        <h2>其次：Python编程与数据处理能力</h2>
+        <p>我熟悉Python编程语言，可以用其编写程序以及运行，会使用numpy，pandas，matplotlib等内置库，还可以使用sklearn内置库进行机器学习，通过线性回归拟合直线，逻辑回归预测分类等，可以对实验进行数据处理与可视化输出。（文末附上了我的一些Python程序代码和运行结果）</p>
+        
+        <p style="color: #666; font-size: 14px; margin-top: 20px;">👇 <i>（点击下方图片可放大查看：P1统计图、P2线性回归、P3逻辑回归）</i></p>
+        
+        <!-- 3图展示区 -->
+        <div class="code-gallery">
+             <img src="https://s41.ax1x.com/2026/10/30/pn6GZ9I.png" alt="作品6" onclick="openLightbox(this)">
+             <img src="https://s41.ax1x.com/2026/10/30/pn6Ge3t.png" alt="作品7" onclick="openLightbox(this)">
+             <img src="https://s41.ax1x.com/2026/10/30/pn6GE4A.png" alt="作品8" onclick="openLightbox(this)">
+        </div>
+    </div>
+
+    <!-- 6. 方面四：性格 -->
+    <div class="section bg-gray" id="personality">
+        <h2>除此之外：外向性格与团队氛围</h2>
+        <p>我是一个比较e的人。外向的性格可以为我们JIU- NBBMS的线下活动和宣传营造更加活跃的氛围，让更多人了解我们解决的实际问题，并理解研究的意义和方向。</p>
+    </div>
+
+    <!-- 7. 结尾 -->
+    <footer>
+        <p>再次感谢您的淳淳教诲，祝您身体健康，万事如意，桃李满园。</p>
+        <p style="margin-top: 20px; font-weight: bold; color: #fff;">生医科2班：方继禾</p>
+        <p>2026.10</p>
+    </footer>
+
+    <!-- 8. 灯箱 HTML -->
+    <div id="myLightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close-btn">&times;</span>
+        <img id="lightbox-img" src="" alt="放大图片">
+    </div>
+
+    <!-- 9. JavaScript 交互 -->
+    <script>
+        function openLightbox(element) {
+            var lightbox = document.getElementById("myLightbox");
+            var lightboxImg = document.getElementById("lightbox-img");
+            lightboxImg.src = element.src;
+            lightbox.style.display = "flex";
+        }
+
+        function closeLightbox() {
+            var lightbox = document.getElementById("myLightbox");
+            lightbox.style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
